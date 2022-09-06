@@ -1,5 +1,5 @@
-﻿UseArrays();
-// ChooseMethod();
+﻿// UseArrays();
+ChooseMethod();
 
 void ChooseMethod()
 {
@@ -23,6 +23,9 @@ void ChooseMethod()
 
 string[] CreateArray()
 {
+  Console.WriteLine("\nСоздание собственного массива");
+  Console.Write("Введите элементы массива (через пробел/запятую/точку): ");
+
   char[] delimiterChars = { ' ', ',', '.', '\t' };
 
   try
@@ -38,13 +41,17 @@ string[] CreateArray()
 
 void UseArrays()
 {
+  Console.WriteLine("\nИспользование педзаданных массивов");
+
   string[] exampleArray1 = { "hello", "2", "world", ":-)" };
   string[] exampleArray2 = { "1234", "1567", "-2", "computer science" };
   string[] exampleArray3 = { "Russia", "Denmark", "Kazan" };
 
   ShowResult(exampleArray1, FindElements(exampleArray1));
-  // ShowResult(exampleArray2, FindElements(exampleArray2));
-  // ShowResult(exampleArray3, FindElements(exampleArray3));
+  Console.WriteLine();
+  ShowResult(exampleArray2, FindElements(exampleArray2));
+  Console.WriteLine();
+  ShowResult(exampleArray3, FindElements(exampleArray3));
 }
 
 string[] FindElements(string[] array)
@@ -73,9 +80,9 @@ void ShowResult(string[] array, string[] result)
   {
     if (i == array.Length - 1)
     {
-      Console.Write(array[i]);
+      Console.Write("'" + array[i] + "'");
     }
-    else Console.Write(array[i] + ", ");
+    else Console.Write("'" + array[i] + "', ");
   }
   Console.Write("]");
 
@@ -86,9 +93,9 @@ void ShowResult(string[] array, string[] result)
   {
     if (i == result.Length - 1)
     {
-      Console.Write(result[i]);
+      Console.Write("'" + result[i] + "'");
     }
-    else Console.Write(result[i] + ", ");
+    else Console.Write("'" + result[i] + "', ");
   }
   Console.Write("]");
 }
